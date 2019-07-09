@@ -1,0 +1,18 @@
+spring:
+  kafka:
+    bootstrap-servers: 192.168.2.12:9092
+    listener:
+      concurrency: 10
+      ack-mode: MANUAL_IMMEDIATE
+      poll-timeout: 1500
+    consumer:
+      group-id: logSystem
+      enable-auto-commit: false
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties: {session.timeout.ms: 6000, auto.offset.reset: earliest}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      batch-size: 65536
+      buffer-memory: 524288
