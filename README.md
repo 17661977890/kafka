@@ -12,19 +12,38 @@ springboot 集成kafka 简单案例  （docker安装zookeeper 和 kafka）
 
 #### https://www.cnblogs.com/hei12138/p/ideausedocker.html   按照此网站步骤操作
 
-* 安装idea docker插件，
+* docker 设置：
 
-* 配置测试联通
+ ![image](https://github.com/17661977890/kafka/blob/master/src/main/resources/image/760273-20171004163227693-1287318838.png)
 
-* 已经编写好的本地项目，并本地打包  mvn clean package
+* 安装idea docker插件:
 
+ ![image](https://github.com/17661977890/kafka/blob/master/src/main/resources/image/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190710100024.png)
+
+* 配置测试联通:
+
+ ![image](https://github.com/17661977890/kafka/blob/master/src/main/resources/image/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190710100159.png)
+ 
+* 已经编写好的本地项目，并本地打包  mvn clean package:
+ 
 * 编写Dockerfile(文件名字不能写错)--具体编写内容可以网上查看，注意 生成得jar包 要和Dockerfile在一个文件夹下，如果不在，在Dockerfile ADD编写得时候要写正确相对对路径（我是放在一个文件夹下了）
+ 
+ ![image](https://github.com/17661977890/kafka/blob/master/src/main/resources/image/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190710100827.png)
+ 
+* 配置docker 发布部署启动项:
 
-* 配置docker 发布部署启动项
+ ![image](https://github.com/17661977890/kafka/blob/master/src/main/resources/image/760273-20171004170451161-1746553335.png)
+ ![image](https://github.com/17661977890/kafka/blob/master/src/main/resources/image/760273-20171004170919865-309353323.png)
 
-* run 执行 看日志是否发布成功
+* run 执行 看日志是否发布成功：
+
+ ![image](https://github.com/17661977890/kafka/blob/master/src/main/resources/image/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190710100917.png)
 
 * 测试（注意端口是docker端暴露得端口，可以在docker 我们发布的容器查看日志）
+
+ ![image](https://github.com/17661977890/kafka/blob/master/src/main/resources/image/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190710101020.png)
+ ![image](https://github.com/17661977890/kafka/blob/master/src/main/resources/image/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190710095657.png)
+
 
 #### 项目发布docker过程遇到得报错： 
 
