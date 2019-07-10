@@ -1,6 +1,6 @@
 # kafka
 springboot 集成kafka 简单案例  （docker安装zookeeper 和 kafka）
-
+* 官网： http://kafka.apache.org/quickstart
 
 ## 一、docker安装kafka zookeeper
 * docker run -d --name zookeeper -p 2181:2181 -t zookeeper  拉取最新版本
