@@ -1,20 +1,23 @@
 server:
-  port: 8761
+  port: 8762
+  #port: 8761  因为已经在docker发布此端口（如果docker该容器在启动，又想在本地测试会报端口冲突，本地可以修改测试）
 spring:
   kafka:
-    bootstrap-servers: 192.168.2.12:9092
+    bootstrap-servers: 192.168.2.12:9092 # 指定集群地址
     listener:
       concurrency: 10
       ack-mode: MANUAL_IMMEDIATE
       poll-timeout: 1500
     consumer:
-      group-id: logSystem
-      enable-auto-commit: false
+      group-id: logSystem # 消费者群组ID，发布-订阅模式，即如果一个生产者，多个消费者都要消费，那么需要定义自己的群组，同一群组内的消费者只有一个能消费到消息。
+      enable-auto-commit: false # 如果为true，消费者的偏移量将在后台定期提交。# 自动提交周期 auto-commit-interval: 100
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       properties: {session.timeout.ms: 6000, auto.offset.reset: earliest}
     producer:
+       # 指定消息key和消息体的编解码方式。
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
-      batch-size: 65536
-      buffer-memory: 524288
+      batch-size: 65536 # 每次批量发送消息的数量 批处理条数：当多个记录被发送到同一个分区时，生产者会尝试将记录合并到更少的请求中。这有助于客户端和服务器的性能。
+      buffer-memory: 524288 # 批处理缓冲区大小 单位兆M。
+      retries: 0  # 发送失败重试次数。

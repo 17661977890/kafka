@@ -16,8 +16,20 @@ public class KafkaController {
     @Autowired
     private KafkaProducer kafkaProducer;
 
+    /**
+     * 测试kafka 简易demo
+     * @param log
+     */
     @RequestMapping(value = "/kafkaSend")
     public void kafkaSend(String log){
         kafkaProducer.sendLog(log);
+    }
+
+    /**
+     * 测试kafka 得吞吐量（利用线程）
+     */
+    @RequestMapping(value = "kafkaSend2")
+    public void kafkaSend2(){
+        kafkaProducer.saveByKafka();
     }
 }
