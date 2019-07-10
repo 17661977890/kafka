@@ -8,7 +8,7 @@ springboot 集成kafka 简单案例  （docker安装zookeeper 和 kafka）
 
 * 版本对应问题
 
-## 二、idea 一键部署docker
+## 二、idea 一键部署docker（有很多方案，docker-componse.yml<一键集群了解一下>--一般都是linux环境操作）
 
 #### https://www.cnblogs.com/hei12138/p/ideausedocker.html   按照此网站步骤操作
 
@@ -20,7 +20,7 @@ springboot 集成kafka 简单案例  （docker安装zookeeper 和 kafka）
 
  ![image](https://github.com/17661977890/kafka/blob/master/src/main/resources/image/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190710100024.png)
 
-* 配置测试联通:
+* 配置测试联通:（一般docker都要开启远程访问连接，貌似windows默认开启，所以如果是其他环境安装docker，要看看）
 
  ![image](https://github.com/17661977890/kafka/blob/master/src/main/resources/image/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190710100159.png)
  
